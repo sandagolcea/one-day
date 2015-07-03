@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var professionalSchema = new Schema({
-  name: String
+  name: String,
+  email: String,
+  job: String
 });
 
 mongoose.model('Professional', professionalSchema);
