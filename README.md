@@ -1,6 +1,6 @@
 # one day experience
-the project aims to inspire young people find their career path
-by connecting them with professionals which can show them how a day at their job looks like.
+the project aims to inspire young people to find their career path
+by connecting them with professionals who can show them how a day at their job looks like.
 
 ##to run
 - `git clone git@github.com:sandagolcea/one-day.git`

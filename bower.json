@@ -1,0 +1,22 @@
+{
+  "name": "one-day",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sandagolcea/one-day",
+  "authors": [
+    "Sanda Golcea <sanda.golcea@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.2"
+  }
+}
