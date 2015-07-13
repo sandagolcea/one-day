@@ -22,18 +22,14 @@ app.get('/professionals', function(request, response) {
   });
 });
 
-// TODO: profile addition for new professionals
-app.get('/create', function(request, response) {
-  console.log('hi');
-  Professional.create({
-   name: 'Sanda',
-   email: 'sanda.golcea@gmail.com',
-   job: 'software developer'
-  }, function() {
-    response.send("Hello");
-  });
-});
-
 app.listen(port, function () {
   console.log('Listening on port '+port+'..');
+});
+
+//close database connection on exit:
+process.on('SIGINT', function() {  
+  mongoose.connection.close(function () { 
+    console.log('Mongoose db connection closed.'); 
+    process.exit(0); 
+  }); 
 });
