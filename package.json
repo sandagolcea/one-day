@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start test/unit/karma.conf.js",
     "mongo": "mongod --dbpath data/db",
-    "seed": "",
+    "seed": "config/seedDB.js",
     "start": "node server.js"
   },
   "keywords": [
