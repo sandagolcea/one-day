@@ -1,0 +1,31 @@
+.navbar-header {
+  min-height: 63px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #aaa;
+  min-height: 63px;
+  font-size: 13px;
+}
+
+.navbar-nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  vertical-align: middle;
+}
+
+.navbar-default .navbar-text {
+  color: #222222;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #00b5e7;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #00b5e7;
+  background-color: #ffffff;
+}

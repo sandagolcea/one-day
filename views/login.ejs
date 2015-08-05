@@ -2,12 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
 </head>
 <body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+  <h1><span class="fa fa-sign-in"></span> Login</h1>
   <form method="post">
-    Name: <input type="text" name="username"><br>
-    Password: <input type="password" name="password"><br>
-    <input type="submit" value="login">
+    <div class="form-group">
+      <label>Name: </label>
+      <input type="text" name="username" class="form-control"><br>
+    </div>
+    <div class="form-group">
+      <label>Password: </label>
+      <input type="password" name="password" class="form-control"><br>
+    </div>
+    <input type="submit" value="login" class="btn btn-warning btn-lg">
   </form>
+  <hr>
+  <p>Need an account? <a href="/signup">Signup</a></p>
+  <p>Or go <a href="/">home</a>.</p>
+</div>
+</div>
 </body>
 </html>
+

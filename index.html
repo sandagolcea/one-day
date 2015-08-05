@@ -9,6 +9,26 @@
   <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body ng-controller="ProfessionalsController">
+  <!-- Start NavBar-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="http://onedayexperience.es/wp-content/uploads/2014/11/logo-1day-pk.png" alt="One Day Experience"></a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">HOME</a></li>
+          <li><a href="/professionals">PROFESSIONALS</a></li>
+          <li><a href="/profile">PROFILE</a></li> 
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  <!-- End NavBar-->
   <p>Hello One Day!</p>
   <!-- listing all professionals -->
   <ul ng-repeat='professional in professionals'>
