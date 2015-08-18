@@ -5,10 +5,19 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
+var dbURI = process.env.MONGOLAB_URI || 'mongodb://localhost/one-day-test';
 var port = process.env.PORT || 3000;
 
-require('./app/models.js');
-var Professional = mongoose.model('Professional');
+var Professional = require('./app/professional.js');
+
+//database connection
+mongoose.connect(dbURI);
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+  console.log('Successfully connected to mongodb..');
+});
 
 app.set('view engine','ejs');
 app.use('/', express.static(__dirname));
@@ -27,7 +36,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-//user login/logout routes
+//user login/logout/signup routes
 require('./app/routes.js')(app, passport);
 
 app.get('/professionals', function (request, response) {
@@ -51,7 +60,6 @@ app.post('/professionals', function (request, response, next) {
     if (err) { 
       return next(err) 
     }
-    // response.status(201).json(professional);
     response.redirect('back');
   });
 });

@@ -16,6 +16,16 @@ module.exports = function (app, passport) {
     request.logout();
     response.redirect('/');
   });
+
+  app.get('/signup', function (request, response) {
+    response.render('signup.ejs');
+  });
+
+  app.post('/signup', passport.authenticate('local-signup', {
+    failureRedirect: '/signup',
+    successRedirect: '/profile'
+  }));
+
 };
 
 function isLoggedIn (request, response, next) {
