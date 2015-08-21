@@ -10,7 +10,19 @@ by connecting them with professionals who can show them how a day at their job l
 - goto localhost on port 3000
 
 ##to seed the database
-- `npm run seed`
+- `npm run seed` 
+*model changed, needs updating
+
+##to clean the database
+- `node run purge`
 
 ##to test
-- `npm test` for unit tests
+- `npm test` (angular)
+- `mocha` (nodejs)
+
+##technologies
+- javascript
+- nodejs
+- angularjs
+- mongoDB
+- mocha

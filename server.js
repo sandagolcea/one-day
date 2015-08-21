@@ -19,7 +19,7 @@ db.once('open', function (callback) {
   console.log('Successfully connected to mongodb..');
 });
 
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 app.use('/', express.static(__dirname));
 
 app.use(cookieParser());
@@ -29,7 +29,7 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(passport.initialize());
-app.use(passport.session()); 
+app.use(passport.session());
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -57,8 +57,8 @@ app.post('/professionals', function (request, response, next) {
     job: request.body.job
   });
   professional.save(function (err, professional) {
-    if (err) { 
-      return next(err) 
+    if (err) {
+      return next(err);
     }
     response.redirect('back');
   });
@@ -69,9 +69,11 @@ app.listen(port, function () {
 });
 
 //close database connection on exit:
-process.on('SIGINT', function() {  
-  mongoose.connection.close(function () { 
-    console.log('Mongoose db connection closed.'); 
-    process.exit(0); 
-  }); 
+process.on('SIGINT', function() {
+  mongoose.connection.close(function () {
+    console.log('Mongoose db connection closed.');
+    process.exit(0);
+  });
 });
+
+module.exports = app;

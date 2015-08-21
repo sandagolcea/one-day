@@ -5,12 +5,14 @@ var Professional = require('./professional.js');
 // Local Authentication Strategy
 passport.use(new LocalStrategy(function (username, password, done) {
   Professional.findOne({ 'local.email' :  username }, function(err, user) {
-    if (err)
+    if (err) {
         return done(err);
-    if (!user)
-        return done(null, false, null); 
-    if (!user.validPassword(password))
-        return done(null, false, null);
+    }
+
+    if (!user || !user.validPassword(password)) {
+        return done(null, false, null);      
+    }
+
     return done(null, user);
   });
 }));
