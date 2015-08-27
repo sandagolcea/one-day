@@ -8,7 +8,12 @@ var db = mongoose.connection;
 var Professional = require('../app/professional.js');
 
 function deleteAll () {
-  Professional.find().remove().exec();
+  Professional
+    .find()
+    .remove()
+    .exec(function () {
+      console.log('Database has been purged!');
+    });
 }
 
 deleteAll();

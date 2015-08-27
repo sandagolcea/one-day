@@ -11,7 +11,6 @@ by connecting them with professionals who can show them how a day at their job l
 
 ##to seed the database
 - `npm run seed` 
-*model changed, needs updating
 
 ##to clean the database
 - `node run purge`
