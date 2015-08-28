@@ -20,8 +20,6 @@ by connecting them with professionals who can show them how a day at their job l
 - `mocha` (nodejs)
 
 ##technologies
-- javascript
-- nodejs
+- NODEjs + mongoDB
 - angularjs
-- mongoDB
-- mocha
+- mocha + should + supertest

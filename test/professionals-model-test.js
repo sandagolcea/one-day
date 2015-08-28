@@ -3,16 +3,17 @@ var Professional = require('../app/professional.js');
 
 describe('Professionals model', function() {
 
-  beforeEach( function (done) {
+  before( function (done) {
     Professional.register('test@test.com', 'password', function (newProfessional) {
       done();
     });
   });
 
-  after( function (done) {
-    Professional.remove({}, function () {
-      done();
+  after(function(done) {
+    mongoose.connection.close( function () {
+      console.log('Database connection closed..');
     });
+    done();
   });
 
   it('- can register a new professional', function(done){
@@ -22,7 +23,7 @@ describe('Professionals model', function() {
     });
   });
 
-  it('- can fetch professionals by email', function(done){
+  it('- can fetch existing professionals by email', function(done){
     Professional.findByEmail('test@test.com', function (foundProfessional) {
       foundProfessional.name.should.eql('test@test.com');
       done();
